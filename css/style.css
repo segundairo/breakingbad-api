@@ -197,11 +197,10 @@ img {
 .container .characters .character__bio h2 {
   text-align: center;
   font-weight: 900;
-  margin-bottom: 1rem;
 }
 
 .container .characters .character__bio li {
-  padding-top: 10px;
+  padding-top: .8rem;
   line-height: 1.2;
 }
 
