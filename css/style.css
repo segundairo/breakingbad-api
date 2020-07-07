@@ -1,0 +1,240 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  width: 100vw;
+  font-family: "Muli", sans-serif;
+  line-height: 1.6;
+  background-color: #262626;
+  color: #ddd;
+  margin-bottom: 3rem;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: block;
+}
+
+.container {
+  max-width: 1280px;
+  width: 95%;
+  margin: 0 auto;
+}
+
+.container__top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container__top .logo {
+  width: 200px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 1rem;
+}
+
+.container__top .searchBox {
+  width: 70%;
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+  margin-top: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.container__top .searchBox input {
+  padding: 10px;
+  width: 90%;
+  border: none;
+  background: #f7f7f7;
+  outline: none;
+}
+
+.container__top .error {
+  color: red;
+  font-weight: 700;
+  padding: 1rem;
+  text-align: center;
+}
+
+.container .characters {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(300px, 1fr))[auto-fill];
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1rem;
+  margin-top: 3rem;
+  padding: 0 1rem;
+}
+
+.container .characters .character {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 300px;
+      grid-template-rows: 300px;
+  position: relative;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  z-index: 10;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.container .characters .character:hover .character__image img {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+  opacity: 0.8;
+}
+
+.container .characters .character:hover .character__image h3 {
+  opacity: 0;
+}
+
+.container .characters .character:hover .character__bio {
+  -webkit-transform: scaleY(1);
+          transform: scaleY(1);
+  -webkit-transform: .5s;
+          transform: .5s;
+}
+
+.container .characters .character__image {
+  height: 100%;
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 1fr auto;
+      grid-template-rows: 1fr auto;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.container .characters .character__image:before, .container .characters .character__image:after {
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: #fff;
+  content: "";
+  z-index: -1;
+}
+
+.container .characters .character__image:after {
+  -webkit-filter: blur(40px);
+          filter: blur(40px);
+}
+
+.container .characters .character__image img {
+  grid-row: 1 / -1;
+  -ms-grid-column: 1;
+  grid-column: 1;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.container .characters .character__image h3 {
+  text-align: center;
+  opacity: 1;
+  grid-row: 2 / -1;
+  -ms-grid-column: 1;
+  grid-column: 1;
+  padding: 0.5rem;
+  background: #222;
+  opacity: 0.7;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.container .characters .character__bio {
+  padding: 1rem;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  background: #555;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transform: scaleY(0);
+          transform: scaleY(0);
+  opacity: 0.8;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.container .characters .character__bio h2 {
+  text-align: center;
+  font-weight: 900;
+  margin-bottom: 1rem;
+}
+
+.container .characters .character__bio li {
+  padding-top: 10px;
+  line-height: 1.2;
+}
+
+.container .characters .character__bio li > div {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container .characters .character__bio li > div h4 {
+  -ms-flex-preferred-size: 35%;
+      flex-basis: 35%;
+  font-size: smaller;
+}
+
+.container .characters .character__bio li > div h5 {
+  -ms-flex-preferred-size: 60%;
+      flex-basis: 60%;
+  font-size: smaller;
+}
+
+.container .characters .character__bio li > div .status.deceased {
+  color: red;
+}
+
+.container .characters .character__bio li > div .status.presumed {
+  color: orange;
+}
+/*# sourceMappingURL=style.css.map */
